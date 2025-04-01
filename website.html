@@ -158,6 +158,10 @@
         section {
             padding: var(--spacing-xl) 0;
             position: relative;
+            min-height: 100vh; /* Ensure each section takes at least the full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .split-section {
@@ -372,6 +376,9 @@
             flex-direction: column;
             justify-content: center;
             min-height: 100vh;
+            padding-top: var(--spacing-xl);  
+            padding-bottom: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg); /* Added margin to create space between about and skills section */
         }
 
         .about-image {
@@ -417,6 +424,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-top: var(--spacing-xl); /* Added padding to create more space */
+            margin-top: var(--spacing-xl); /* Added margin to create more space */
         }
 
         .skills-container {
@@ -471,6 +480,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-top: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
         }
 
         .timeline {
@@ -538,12 +549,24 @@
             margin-top: var(--spacing-sm);
         }
 
+        /* Projects Section */
+        .projects {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+
         /* Contact Section */
         .contact {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            padding-top: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
         }
 
         .contact-form {
@@ -766,6 +789,12 @@
                 margin-bottom: var(--spacing-sm);
                 display: inline-block;
             }
+            
+            /* Add more space between sections on smaller screens */
+            section {
+                padding: var(--spacing-lg) 0;
+                margin-bottom: var(--spacing-md);
+            }
         }
 
         @media (max-width: 768px) {
@@ -801,6 +830,13 @@
 
             .skills-container {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            /* Ensure sections don't overlap on smaller screens */
+            section {
+                min-height: auto;
+                padding: var(--spacing-lg) 0;
+                margin-bottom: var(--spacing-lg);
             }
         }
 
